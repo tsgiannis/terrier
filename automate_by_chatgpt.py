@@ -30,7 +30,7 @@ terrier_batch = '/home/masteripper/terrier-project-5.5/batch/index'
 terrier_batch_results = '/home/masteripper/terrier-project-5.5/batch/results'
 
 # Define the possible values for each property
-wmodels = random.choice(['BM25', 'DFR',  'DFRee','InL2','Hiemstra_LM','PL2','BM25'])
+wmodels = random.choice(['BM25', 'DFR',  'DFRee','BM25','InL2','Hiemstra_LM','PL2','BM25'])
 trecquerytags_processes = ['TOP','NUM','TITLE']
 trecquerytags_skips = ['DESC','NARR']
 termpipelines = ['Stopwords', 'PorterStemmer', 'Stopwords,PorterStemmer']
