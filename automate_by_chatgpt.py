@@ -76,6 +76,7 @@ for i in range(20):
         else:
             new_lines.append(line)
     index_folder = os.path.join(terrier_batch,f"index_{i}")
+    result_folder = os.path.join(terrier_batch_results, f"index_{i}")
     #
     old_name = terrier_properties
     new_name = terrier_properties + f"_0{i}"
