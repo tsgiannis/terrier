@@ -84,7 +84,7 @@ for i in range(20):
     new_lines.append(f'terrier.index.path={index_folder}/')
     with open(terrier_properties, 'w') as f:
         f.writelines(new_lines)
-
+#
     if not os.path.exists(index_folder):
         # if the demo_folder directory is not present
         # then create it.
