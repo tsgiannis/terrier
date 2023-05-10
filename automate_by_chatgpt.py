@@ -30,20 +30,23 @@ terrier_batch = '/home/masteripper/terrier-project-5.5/batch/index'
 terrier_batch_results = '/home/masteripper/terrier-project-5.5/batch/results'
 
 # Define the possible values for each property
-wmodels = random.choice(['BM25', 'DFR',  'DFRee','BM25','InL2','Hiemstra_LM','PL2','BM25'])
-trecquerytags_processes = ['TOP','NUM','TITLE']
+wmodels ='DPH'
+trecquerytags_processes = ['TOP','NUM','TITLE','ABSTRACT']
 trecquerytags_skips = ['DESC','NARR']
-termpipelines = ['Stopwords', 'PorterStemmer', 'Stopwords,PorterStemmer']
+termpipelines = ['Stopwords', 'PorterStemmer', 'Stopwords,PorterStemmer','WeakPorterStemmer','TRv2PorterStemmer',
+                 'SnowballStemmer','EnglishSnowballStemmer']
 fieldtags_processes = ['TITLE', 'ELSE']
 
 
 # Read the Terrier properties file
+terrier_sample_properties = os.path.join(terrier_etc,'terrier_sample.properties')
 terrier_properties = os.path.join(terrier_etc,'terrier.properties')
-with open(terrier_properties) as f:
+with open(terrier_sample_properties) as f:
     lines = f.readlines()
 
 # Generate all possible combinations of the properties
-for i in range(30):
+for i in range(50):
+    #wmodels = random.choice(['BM25', 'DPH', 'InL2', 'Hiemstra_LM' ])
     trecquerytags_processes_rnd = random.randint(1, len(trecquerytags_processes))
     trecquerytags_skips_rnd = random.randint(1, len(trecquerytags_skips))
     termpipelines_rnd = random.randint(1, len(termpipelines))
